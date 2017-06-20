@@ -1,4 +1,4 @@
-export default [
+[
   {
     "first": "Carlotta",
     "last": "Shanahan",
@@ -674,4 +674,4 @@ export default [
     "balance": "$4,131.59",
     "id": 75
   }
-];
+]

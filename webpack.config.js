@@ -8,7 +8,7 @@ module.exports = {
     historyApiFallback: true,
     host: '0.0.0.0',
     https: false,
-    port: 8055,
+    port: process.env.CLIENT_PORT || 8056,
     publicPath: '/assets/',
     watchOptions: {
       aggregateTimeout: 300,
@@ -46,6 +46,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      _: "lodash"
+    }),
     new HtmlWebpackPlugin({
       title: 'Isomorphic React',
       inject: 'body',

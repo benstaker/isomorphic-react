@@ -25,23 +25,42 @@ module.exports = {
   module: {
     rules: [
       {
-        loader: 'babel-loader',
         test: /\.js|\.jsx$/,
         include: [path.join(__dirname, 'src')],
-        options: { cacheDirectory: 'babel_cache', presets: ['react', 'es2015'] }
+        use: [{
+          loader: 'babel-loader',
+          options: { cacheDirectory: 'babel_cache', presets: ['react', 'es2015'] }
+        }]
       },
       {
-        loader: 'eslint-loader',
         test: /\.js|\.jsx$/,
-        include: [path.join(__dirname, 'src'), path.join(__dirname, 'webpack.config.js')]
+        include: [path.join(__dirname, 'src'), path.join(__dirname, 'webpack.config.js')],
+        use: [{
+          loader: 'eslint-loader',
+          options: { cache: true }
+        }]
       },
       {
-        loader: 'ejs-loader',
         test: /\.ejs$/,
         include: [path.join(__dirname, 'src')],
-        options: {
-          markup: ''
-        }
+        use: [{
+          loader: 'ejs-loader',
+          options: { markup: '' }
+        }]
+      },
+      {
+        test: /\.scss$/,
+        include: [path.join(__dirname, 'src')],
+        use: [{
+          loader: 'style-loader',
+          options: { sourceMap: true }
+        },{
+          loader: 'css-loader',
+          options: { modules: true, sourceMap: true }
+        },{
+          loader: 'sass-loader',
+          options: { sourceMap: true }
+        }]
       }
     ]
   },

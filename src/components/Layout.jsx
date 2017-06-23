@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+require('./Layout.scss');
+
 const Layout = props => (
   <div className="container">
     <header>

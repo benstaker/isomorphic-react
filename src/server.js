@@ -4,9 +4,10 @@ import AppServer from './components/AppServer';
 import ejs from 'ejs';
 import fs from 'fs';
 
+const env = process.env.NODE_ENV || 'local';
 const serverPort = process.env.SERVER_PORT || 8055;
 
-console.log(`Starting server on port ${serverPort}`);
+console.log(`Starting ${env}-environment server on port ${serverPort}`);
 createServer((req, res) => {
   const context = {};
   const html = ReactDOMServer.renderToString(AppServer(req, context));

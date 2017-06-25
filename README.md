@@ -28,6 +28,6 @@ Open [http://localhost:8055/](http://localhost:8055/)
 - ~~Fix EJS template issues with WebPack~~
 - ~~Add serve and watch for both client and server~~
 - ~~Hook up stylelint~~
-- Import stylesheets into React components
+- Import stylesheets into React components, that works for both isomorphic and regular serving
 - Fix React routing
 - Rework architecture to support modular server and client code

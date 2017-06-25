@@ -1,0 +1,14 @@
+# Set default behaviour
+* text=auto
+
+# Declare files that will always have LF line endings on checkout
+*.css text eol=lf
+*.html text eol=lf
+*.jade text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.less text eol=lf
+*.pug text eol=lf
+*.sass text eol=lf
+*.scss text eol=lf
+*.txt text eol=lf
